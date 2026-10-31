@@ -1,0 +1,31 @@
+# Runtime dependencies (pinned to the versions verified by the test suite).
+# Removed in v2 because nothing imported them: openai, tiktoken, sentence-transformers (pulled in PyTorch),
+# chromadb, alembic, aiosqlite, pdf2image, python-jose, passlib, bcrypt, markdown, bleach, uuid6, mypy.
+
+# Web API
+fastapi==0.115.0
+uvicorn[standard]==0.30.0
+pydantic==2.14.1
+pydantic-settings==2.5.0
+python-dotenv==1.2.4
+python-multipart==0.0.9
+httpx==0.28.1
+
+# Database
+SQLAlchemy==2.0.35
+# PostgreSQL is supported through DATABASE_URL; install a driver if you use it, e.g. psycopg[binary]==3.2.3
+
+# Google Gemini (official Google GenAI SDK)
+google-genai==1.75.0
+
+# Retrieval
+numpy==1.26.4
+rank-bm25==0.2.2
+
+# Document processing
+PyMuPDF==1.24.0
+Pillow==10.4.0
+pytesseract==0.3.13
+
+# Knowledge graph
+neo4j==5.24.0

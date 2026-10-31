@@ -1,0 +1,465 @@
+{
+  "_meta": {
+    "description": "Curated legal knowledge layer used for scenario routing, applicability reasoning and graph relationships. Every constitutional quote below is checked verbatim against the ingested Constitution text at build time; entries whose quote is not found are stored as 'unverified' and are never used as authoritative evidence. Statutory excerpts are verified only if the official India Code PDF is present in data/statutes and contains the excerpt. Scenario-to-provision mappings are editorial routing hints prepared with AI assistance and are marked 'needs_legal_review'; they decide what to retrieve, never what the law says.",
+    "version": "2026-10-30.1",
+    "review_status": "needs_legal_review"
+  },
+
+  "provision_annotations": [
+    {"provision_id": "COI:art:12", "addressee": "definition", "concept": "the_state",
+     "supporting_text": "“the State” includes the Government and Parliament of India and the Government and the Legislature of each of the States and all local or other authorities within the territory of India or under the control of the Government of India",
+     "note": "Defines 'the State' for Part III. Most Fundamental Rights restrain 'the State', so whether an actor falls within this definition is usually the first applicability question."},
+    {"provision_id": "COI:art:13:cl:2", "addressee": "state",
+     "supporting_text": "The State shall not make any law which takes away or abridges the rights conferred by this Part",
+     "note": "Laws inconsistent with Part III are void to the extent of the contravention."},
+    {"provision_id": "COI:art:13:cl:3", "addressee": "definition", "concept": "law",
+     "supporting_text": "“law” includes any Ordinance, order, bye-law, rule, regulation, notification, custom or usage having in the territory of India the force of law",
+     "note": "Defines 'law' for Article 13."},
+    {"provision_id": "COI:art:14", "addressee": "state",
+     "supporting_text": "The State shall not deny to any person equality before the law or the equal protection of the laws",
+     "note": "Addressed to the State. Relevant to private disputes only through the conduct of State authorities, such as police or officials."},
+    {"provision_id": "COI:art:15:cl:1", "addressee": "state",
+     "supporting_text": "The State shall not discriminate against any citizen on grounds only of religion, race, caste, sex, place of birth or any of them",
+     "note": "Clause (1) binds the State only."},
+    {"provision_id": "COI:art:15:cl:2", "addressee": "state_and_private", "scope_limited": true,
+     "scope_terms": ["shop", "restaurant", "hotel", "entertainment", "well", "tank", "bathing ghat", "road", "public resort"],
+     "supporting_text": "No citizen shall, on grounds only of religion, race, caste, sex, place of birth or any of them, be subject to any disability, liability, restriction or condition with regard to",
+     "note": "Clause (2) is not limited to the State, but it covers only the listed matters: shops, public restaurants, hotels, places of public entertainment, and wells, tanks, bathing ghats, roads and places of public resort maintained out of State funds or dedicated to public use. Renting private housing is not among the listed matters."},
+    {"provision_id": "COI:art:16:cl:2", "addressee": "state",
+     "supporting_text": "be ineligible for, or discriminated against in respect of, any employment or office under the State",
+     "note": "Applies to employment or office under the State, not private employment."},
+    {"provision_id": "COI:art:17", "addressee": "state_and_private",
+     "supporting_text": "“Untouchability” is abolished and its practice in any form is forbidden",
+     "note": "Not limited to the State; enforcement of disabilities arising from untouchability is an offence punishable in accordance with law."},
+    {"provision_id": "COI:art:19", "addressee": "state",
+     "supporting_text": "All citizens shall have the right",
+     "note": "Article 19 rights are guaranteed to citizens and are read with the restrictions in clauses (2) to (6), which concern laws made by the State. Whether a particular private body can be proceeded against depends on whether it is 'the State' under Article 12 or performs public functions; that requires facts and case law not bundled here."},
+    {"provision_id": "COI:art:19:cl:1:sub:a", "addressee": "state",
+     "supporting_text": "to freedom of speech and expression",
+     "note": "Subject to reasonable restrictions under Article 19(2)."},
+    {"provision_id": "COI:art:20", "addressee": "state",
+     "supporting_text": "No person accused of any offence shall be compelled to be a witness against himself",
+     "note": "Protections concerning conviction, double jeopardy and self-incrimination."},
+    {"provision_id": "COI:art:21", "addressee": "state",
+     "supporting_text": "No person shall be deprived of his life or personal liberty except according to procedure established by law",
+     "note": "Article 21 restrains deprivation of life or personal liberty otherwise than according to procedure established by law. Its text does not make every private wrong (such as a theft) a constitutional violation; ordinary criminal and civil law govern private wrongs."},
+    {"provision_id": "COI:art:21A", "addressee": "state",
+     "supporting_text": "The State shall provide free and compulsory education to all children of the age of six to fourteen years",
+     "note": "Duty of the State, in the manner the State determines by law."},
+    {"provision_id": "COI:art:22:cl:1", "addressee": "arresting_authority",
+     "supporting_text": "No person who is arrested shall be detained in custody without being informed, as soon as may be, of the grounds for such arrest nor shall he be denied the right to consult, and to be defended by, a legal practitioner of his choice",
+     "note": "Safeguards for a person who is arrested. Subject to the exceptions in Article 22(3)."},
+    {"provision_id": "COI:art:22:cl:2", "addressee": "arresting_authority",
+     "supporting_text": "shall be produced before the nearest magistrate within a period of twenty-four hours of such arrest",
+     "note": "Production before a magistrate within 24 hours, excluding journey time. Subject to Article 22(3)."},
+    {"provision_id": "COI:art:22:cl:3", "addressee": "exception",
+     "supporting_text": "Nothing in clauses (1) and (2) shall apply",
+     "note": "Clauses (1) and (2) do not apply to enemy aliens or to persons arrested or detained under a preventive detention law."},
+    {"provision_id": "COI:art:23:cl:1", "addressee": "state_and_private",
+     "supporting_text": "Traffic in human beings and begar and other similar forms of forced labour are prohibited and any contravention of this provision shall be an offence punishable in accordance with law",
+     "note": "The prohibition is not limited to the State, so it can be engaged by a private employer's conduct."},
+    {"provision_id": "COI:art:23:cl:2", "addressee": "exception",
+     "supporting_text": "Nothing in this article shall prevent the State from imposing compulsory service for public purposes",
+     "note": "Exception for compulsory service for public purposes, without discrimination on the listed grounds."},
+    {"provision_id": "COI:art:24", "addressee": "state_and_private",
+     "supporting_text": "No child below the age of fourteen years shall be employed to work in any factory or mine or engaged in any other hazardous employment",
+     "note": "Applies to employers generally."},
+    {"provision_id": "COI:art:25:cl:1", "addressee": "state",
+     "supporting_text": "Subject to public order, morality and health and to the other provisions of this Part, all persons are equally entitled to freedom of conscience",
+     "note": "Freedom of religion is itself subject to public order, morality, health and other Part III provisions."},
+    {"provision_id": "COI:art:32:cl:1", "addressee": "remedy",
+     "supporting_text": "The right to move the Supreme Court by appropriate proceedings for the enforcement of the rights conferred by this Part is guaranteed",
+     "note": "Constitutional remedy for Fundamental Rights."},
+    {"provision_id": "COI:art:226:cl:1", "addressee": "remedy",
+     "supporting_text": "every High Court shall have power, throughout the territories in relation to which it exercises jurisdiction, to issue to any person or authority, including in appropriate cases, any Government",
+     "note": "High Courts may issue writs for enforcing Part III rights and for any other purpose."},
+    {"provision_id": "COI:art:300A", "addressee": "state",
+     "supporting_text": "No person shall be deprived of his property save by authority of law",
+     "note": "Constitutional right (not a Fundamental Right since the Forty-fourth Amendment) concerning deprivation of property by authority of law; it is not a protection against private theft."},
+    {"provision_id": "COI:art:37", "addressee": "definition",
+     "supporting_text": "The provisions contained in this Part shall not be enforceable by any court",
+     "note": "Directive Principles are not enforceable by courts but are fundamental in governance."},
+    {"provision_id": "COI:art:39A", "addressee": "directive",
+     "supporting_text": "provide free legal aid, by suitable legislation or schemes or in any other way",
+     "note": "Directive Principle on free legal aid (not itself enforceable in court under Article 37)."},
+    {"provision_id": "COI:art:359", "addressee": "exception",
+     "supporting_text": "the rights conferred by Part III (except articles 20 and 21)",
+     "note": "During an Emergency the President may suspend enforcement of Part III rights other than Articles 20 and 21."}
+  ],
+
+  "legal_concepts": [
+    {"id": "the_state", "name": "“the State” (Part III)", "defined_by": "COI:art:12",
+     "description": "Who is bound by most Fundamental Rights."},
+    {"id": "law", "name": "“law” (Article 13)", "defined_by": "COI:art:13:cl:3",
+     "description": "What counts as law for testing consistency with Fundamental Rights."},
+    {"id": "state_action", "name": "State action requirement", "defined_by": null,
+     "related_provisions": ["COI:art:12", "COI:art:14", "COI:art:15:cl:1", "COI:art:21"],
+     "description": "Editorial concept: whether the conduct complained of is attributable to the State as defined in Article 12."},
+    {"id": "reasonable_restrictions", "name": "Reasonable restrictions on Article 19 freedoms", "defined_by": null,
+     "related_provisions": ["COI:art:19:cl:2", "COI:art:19:cl:3", "COI:art:19:cl:4", "COI:art:19:cl:5", "COI:art:19:cl:6"],
+     "description": "Article 19 freedoms may be limited by law imposing reasonable restrictions on the stated grounds."}
+  ],
+
+  "user_rights": [
+    {"id": "informed_grounds_of_arrest", "name": "Right to be informed of the grounds of arrest", "provision_id": "COI:art:22:cl:1",
+     "supporting_text": "without being informed, as soon as may be, of the grounds for such arrest"},
+    {"id": "consult_lawyer_on_arrest", "name": "Right to consult and be defended by a legal practitioner of choice", "provision_id": "COI:art:22:cl:1",
+     "supporting_text": "nor shall he be denied the right to consult, and to be defended by, a legal practitioner of his choice"},
+    {"id": "production_before_magistrate", "name": "Right to be produced before the nearest magistrate within 24 hours", "provision_id": "COI:art:22:cl:2",
+     "supporting_text": "shall be produced before the nearest magistrate within a period of twenty-four hours of such arrest"},
+    {"id": "equality_before_law", "name": "Equality before the law and equal protection of the laws", "provision_id": "COI:art:14",
+     "supporting_text": "The State shall not deny to any person equality before the law or the equal protection of the laws"},
+    {"id": "life_personal_liberty", "name": "Protection of life and personal liberty", "provision_id": "COI:art:21",
+     "supporting_text": "No person shall be deprived of his life or personal liberty except according to procedure established by law"},
+    {"id": "free_speech", "name": "Freedom of speech and expression (citizens)", "provision_id": "COI:art:19:cl:1:sub:a",
+     "supporting_text": "to freedom of speech and expression"},
+    {"id": "freedom_from_forced_labour", "name": "Protection against forced labour and trafficking", "provision_id": "COI:art:23:cl:1",
+     "supporting_text": "begar and other similar forms of forced labour are prohibited"},
+    {"id": "non_discrimination_state", "name": "Non-discrimination by the State", "provision_id": "COI:art:15:cl:1",
+     "supporting_text": "The State shall not discriminate against any citizen"},
+    {"id": "public_access_non_discrimination", "name": "Non-discrimination in access to shops, restaurants, hotels and public places", "provision_id": "COI:art:15:cl:2",
+     "supporting_text": "access to shops, public restaurants, hotels and places of public entertainment"},
+    {"id": "free_education", "name": "Free and compulsory education for children aged 6 to 14", "provision_id": "COI:art:21A",
+     "supporting_text": "free and compulsory education to all children of the age of six to fourteen years"},
+    {"id": "move_supreme_court", "name": "Right to move the Supreme Court to enforce Fundamental Rights", "provision_id": "COI:art:32:cl:1",
+     "supporting_text": "The right to move the Supreme Court by appropriate proceedings for the enforcement of the rights conferred by this Part is guaranteed"}
+  ],
+
+  "statutes": [
+    {"id": "BNS", "title": "Bharatiya Nyaya Sanhita, 2023", "act_number": "Act No. 45 of 2023", "in_force_from": "2024-07-01",
+     "source_url": "https://www.indiacode.nic.in/bitstream/123456789/20062/1/a2023-45.pdf", "local_file": "bns_2023.pdf",
+     "authority": "India Code, Legislative Department, Government of India",
+     "sections": [
+       {"id": "BNS:303:1", "section": "303", "subsection": "(1)", "heading": "Theft", "offence": "theft",
+        "text": "Whoever, intending to take dishonestly any movable property out of the possession of any person without that person's consent, moves that property in order to such taking, is said to commit theft."},
+       {"id": "BNS:146", "section": "146", "subsection": null, "heading": "Unlawful compulsory labour", "offence": "unlawful_compulsory_labour",
+        "text": "Whoever unlawfully compels any person to labour against the will of that person, shall be punished with imprisonment of either description for a term which may extend to one year, or with fine, or with both."},
+       {"id": "BNS:127:2", "section": "127", "subsection": "(2)", "heading": "Wrongful confinement", "offence": "wrongful_confinement",
+        "text": "Whoever wrongfully confines any person, shall be punished with imprisonment of either description for a term which may extend to one year, or with fine which may extend to five thousand rupees, or with both."}
+     ]},
+    {"id": "BNSS", "title": "Bharatiya Nagarik Suraksha Sanhita, 2023", "act_number": "Act No. 46 of 2023", "in_force_from": "2024-07-01",
+     "source_url": "https://www.indiacode.nic.in/bitstream/123456789/21180/1/bharatiya_nagarik_suraksha_sanhita%2C_2023_1723877824_66c049c04ad7c_%281%29.pdf",
+     "local_file": "bnss_2023.pdf", "authority": "India Code, Legislative Department, Government of India",
+     "sections": [
+       {"id": "BNSS:173:1", "section": "173", "subsection": "(1)", "heading": "Information in cognizable cases", "remedy": "police_report_fir",
+        "text": "Every information relating to the commission of a cognizable offence, irrespective of the area where the offence is committed, may be given orally or by electronic communication to an officer in charge of a police station"},
+       {"id": "BNSS:173:2", "section": "173", "subsection": "(2)", "heading": "Copy of information to informant", "remedy": "police_report_fir",
+        "text": "A copy of the information as recorded under sub-section (1) shall be given forthwith, free of cost, to the informant or the victim."},
+       {"id": "BNSS:173:4", "section": "173", "subsection": "(4)", "heading": "Refusal to record information", "remedy": "superintendent_of_police",
+        "text": "Any person aggrieved by a refusal on the part of an officer in charge of a police station to record the information referred to in sub-section (1), may send the substance of such information, in writing and by post, to the Superintendent of Police concerned"},
+       {"id": "BNSS:175:3", "section": "175", "subsection": "(3)", "heading": "Magistrate may order investigation", "remedy": "magistrate_investigation",
+        "text": "Any Magistrate empowered under section 210 may, after considering the application supported by an affidavit made under sub-section (4) of section 173, and after making such inquiry as the Magistrate thinks necessary and the submission made in this regard by the police officer, order such an investigation"},
+       {"id": "BNSS:47:1", "section": "47", "subsection": "(1)", "heading": "Person arrested to be informed of grounds of arrest", "remedy": "arrest_safeguards_statutory",
+        "text": "Every police officer or other person arresting any person without warrant shall forthwith communicate to him full particulars of the offence for which he is arrested or other grounds for such arrest."},
+       {"id": "BNSS:38", "section": "38", "subsection": null, "heading": "Right of arrested person to meet an advocate of his choice during interrogation", "remedy": "arrest_safeguards_statutory",
+        "text": "When any person is arrested and interrogated by the police, he shall be entitled to meet an advocate of his choice during interrogation, though not throughout interrogation."}
+     ]},
+    {"id": "BLSA", "title": "Bonded Labour System (Abolition) Act, 1976", "act_number": "Act No. 19 of 1976", "in_force_from": "1975-10-25",
+     "source_url": "https://www.indiacode.nic.in/handle/123456789/1491", "local_file": "bonded_labour_1976.pdf",
+     "authority": "India Code, Legislative Department, Government of India",
+     "sections": [
+       {"id": "BLSA:4", "section": "4", "subsection": null, "heading": "Abolition of bonded labour system", "remedy": "district_magistrate_bonded_labour",
+        "text": "On the commencement of this Act, the bonded labour system shall stand abolished and every bonded labourer shall, on such commencement, stand freed and discharged from any obligation to render any bonded labour."}
+     ]}
+  ],
+
+  "offences": [
+    {"id": "theft", "name": "Theft", "defined_by": "BNS:303:1"},
+    {"id": "unlawful_compulsory_labour", "name": "Unlawful compulsory labour", "defined_by": "BNS:146"},
+    {"id": "wrongful_confinement", "name": "Wrongful confinement", "defined_by": "BNS:127:2"},
+    {"id": "untouchability_offence", "name": "Enforcement of disability arising from untouchability", "defined_by": "COI:art:17"},
+    {"id": "forced_labour_offence", "name": "Contravention of the prohibition of forced labour (Article 23)", "defined_by": "COI:art:23:cl:1"}
+  ],
+
+  "authorities": [
+    {"id": "police_station", "name": "Officer in charge of a police station", "type": "GovernmentAuthority"},
+    {"id": "superintendent_of_police", "name": "Superintendent of Police", "type": "GovernmentAuthority"},
+    {"id": "magistrate", "name": "Magistrate", "type": "Court"},
+    {"id": "high_court", "name": "High Court", "type": "Court", "basis": "COI:art:226:cl:1"},
+    {"id": "supreme_court", "name": "Supreme Court of India", "type": "Court", "basis": "COI:art:32:cl:1"},
+    {"id": "district_magistrate", "name": "District Magistrate", "type": "GovernmentAuthority"},
+    {"id": "legal_services_authority", "name": "Legal Services Authority (free legal aid)", "type": "GovernmentAuthority"},
+    {"id": "institution_grievance_body", "name": "Institution's grievance or appeal body", "type": "GovernmentAuthority", "is_private_body": true}
+  ],
+
+  "remedies": [
+    {"id": "police_report_fir", "name": "Report the offence to the police and obtain a copy of the recorded information",
+     "basis": ["BNSS:173:1", "BNSS:173:2"], "authority": "police_station"},
+    {"id": "superintendent_of_police", "name": "If the police station refuses to record it, send the substance in writing by post to the Superintendent of Police",
+     "basis": ["BNSS:173:4"], "authority": "superintendent_of_police"},
+    {"id": "magistrate_investigation", "name": "Apply to an empowered Magistrate, who may order an investigation",
+     "basis": ["BNSS:175:3"], "authority": "magistrate"},
+    {"id": "arrest_safeguards_statutory", "name": "Insist on the statutory arrest safeguards (grounds of arrest, meeting an advocate)",
+     "basis": ["BNSS:47:1", "BNSS:38"], "authority": "police_station"},
+    {"id": "writ_high_court", "name": "Writ petition to the High Court (for example habeas corpus or mandamus)",
+     "basis": ["COI:art:226:cl:1"], "authority": "high_court"},
+    {"id": "writ_supreme_court", "name": "Petition to the Supreme Court to enforce a Fundamental Right",
+     "basis": ["COI:art:32:cl:1", "COI:art:32:cl:2"], "authority": "supreme_court"},
+    {"id": "district_magistrate_bonded_labour", "name": "Approach the District Magistrate about bonded or forced labour",
+     "basis": ["BLSA:4"], "authority": "district_magistrate"},
+    {"id": "free_legal_aid", "name": "Seek free legal aid",
+     "basis": ["COI:art:39A"], "authority": "legal_services_authority"},
+    {"id": "institutional_appeal", "name": "Use the institution's own grievance or appeal procedure and its governing rules",
+     "basis": [], "authority": "institution_grievance_body"}
+  ],
+
+  "legal_issues": [
+    {"id": "private_property_crime", "name": "Theft or other property crime by a private person", "category": "criminal_offence",
+     "ordinary_law_primary": true,
+     "triggers": ["\\b(stole|stolen|steal\\w*|theft|thief|pick-?pocket\\w*|snatch\\w*|robb\\w*|burgl\\w*|looted)\\b"],
+     "engages": [
+       {"provision_id": "COI:art:14", "role": "conditional", "condition": "state_action",
+        "rationale": "Relevant only if a State authority (for example the police) treats the complaint arbitrarily or discriminatorily."}
+     ],
+     "offences": ["theft"], "remedies": ["police_report_fir", "superintendent_of_police", "magistrate_investigation"],
+     "missing_facts": ["whether the police refused to register or act on the complaint", "the place and time of the incident", "identifying details of the property (for a phone, the IMEI number)"]},
+
+    {"id": "police_refusal_complaint", "name": "Police refusal to register a complaint", "category": "police_and_arrest",
+     "ordinary_law_primary": true,
+     "triggers": ["\\b(police|officer|station|cops?)\\b.*\\b(refus\\w*|declin\\w*|won'?t|would not|did not|didn'?t)\\b.*\\b(register|record|complaint|fir|report)\\b",
+                  "\\b(refus\\w*|declin\\w*)\\b.*\\b(register|record|lodge|file)\\b.*\\b(fir|complaint|report)\\b"],
+     "engages": [
+       {"provision_id": "COI:art:14", "role": "conditional", "condition": "state_action",
+        "rationale": "Equal protection of the laws may be relevant if the refusal is arbitrary or discriminatory; a single refusal does not establish a violation."},
+       {"provision_id": "COI:art:226:cl:1", "role": "remedy", "condition": null, "rationale": "High Court writ jurisdiction over public authorities."}
+     ],
+     "offences": [], "remedies": ["superintendent_of_police", "magistrate_investigation", "writ_high_court"],
+     "missing_facts": ["whether the information discloses a cognizable offence", "whether the refusal was recorded or witnessed"]},
+
+    {"id": "arrest_safeguards", "name": "Arrest or detention safeguards", "category": "police_and_arrest",
+     "ordinary_law_primary": false,
+     "triggers": ["\\b(arrest\\w*|detain\\w*|detention|custody|locked up|taken to (the )?police station|police lock-?up)\\b"],
+     "engages": [
+       {"provision_id": "COI:art:22:cl:1", "role": "primary", "condition": "arrest",
+        "rationale": "Grounds of arrest and access to a legal practitioner."},
+       {"provision_id": "COI:art:22:cl:2", "role": "primary", "condition": "arrest",
+        "rationale": "Production before a magistrate within 24 hours."},
+       {"provision_id": "COI:art:22:cl:3", "role": "exception", "condition": null,
+        "rationale": "Clauses (1) and (2) do not apply to enemy aliens or preventive detention."},
+       {"provision_id": "COI:art:21", "role": "primary", "condition": "state_action",
+        "rationale": "Deprivation of personal liberty must be according to procedure established by law."},
+       {"provision_id": "COI:art:20", "role": "context", "condition": "accused", "rationale": "Protection against self-incrimination for an accused."}
+     ],
+     "offences": [], "remedies": ["arrest_safeguards_statutory", "writ_high_court", "writ_supreme_court", "free_legal_aid"],
+     "missing_facts": ["whether the arrest was under a preventive detention law", "whether a warrant was shown", "whether and when you were produced before a magistrate", "whether you are still in custody"]},
+
+    {"id": "discrimination_private_actor", "name": "Discrimination by a private person or business", "category": "discrimination",
+     "ordinary_law_primary": true,
+     "triggers": ["\\b(landlord|owner|employer|shop\\w*|restaurant|hotel|neighbou?r|company|society|housing)\\b.*\\b(religio\\w*|caste|race|sex|gender|muslim|hindu|christian|sikh|dalit|community)\\b",
+                  "\\b(religio\\w*|caste|race|muslim|hindu|christian|sikh|dalit)\\b.*\\b(landlord|refus\\w* to rent|rent\\w*|flat|house|tenant|hotel|restaurant|shop)\\b"],
+     "engages": [
+       {"provision_id": "COI:art:15:cl:1", "role": "conditional", "condition": "state_action",
+        "rationale": "Binds the State only."},
+       {"provision_id": "COI:art:15:cl:2", "role": "conditional", "condition": "listed_public_access",
+        "rationale": "Reaches private conduct only for the listed matters (shops, public restaurants, hotels, places of public entertainment, public wells, roads and places of public resort)."},
+       {"provision_id": "COI:art:12", "role": "context", "condition": null, "rationale": "Whether the actor is 'the State'."},
+       {"provision_id": "COI:art:17", "role": "conditional", "condition": "untouchability",
+        "rationale": "Only if the conduct is a practice of untouchability."},
+       {"provision_id": "COI:art:14", "role": "conditional", "condition": "state_action", "rationale": "Binds the State."}
+     ],
+     "offences": [], "remedies": ["free_legal_aid"],
+     "missing_facts": ["whether the landlord or business is a government or public body", "the State or city (some local laws may apply)", "what was said or written and any evidence of the reason for refusal"]},
+
+    {"id": "discrimination_by_state", "name": "Discrimination by a government body", "category": "discrimination",
+     "ordinary_law_primary": false,
+     "triggers": ["\\b(government|municipal\\w*|public sector|state-run|government (school|college|office|hospital)|official|department)\\b.*\\b(discriminat\\w*|religio\\w*|caste|sex|gender)\\b"],
+     "engages": [
+       {"provision_id": "COI:art:14", "role": "primary", "condition": "state_action", "rationale": "Equality before law."},
+       {"provision_id": "COI:art:15:cl:1", "role": "primary", "condition": "state_action", "rationale": "Non-discrimination by the State."},
+       {"provision_id": "COI:art:16:cl:2", "role": "conditional", "condition": "public_employment", "rationale": "Public employment."}
+     ],
+     "offences": [], "remedies": ["writ_high_court", "writ_supreme_court", "free_legal_aid"],
+     "missing_facts": ["which authority acted and what decision was made", "whether the decision was in writing"]},
+
+    {"id": "untouchability_practice", "name": "Practice of untouchability or caste-based exclusion", "category": "discrimination",
+     "ordinary_law_primary": false,
+     "triggers": ["\\b(untouchab\\w*|caste[- ]based exclusion|not allowed to enter (the )?temple|separate (glass|utensils))\\b"],
+     "engages": [
+       {"provision_id": "COI:art:17", "role": "primary", "condition": null, "rationale": "Untouchability is abolished and its enforcement is an offence."},
+       {"provision_id": "COI:art:15:cl:2", "role": "conditional", "condition": "listed_public_access", "rationale": "Access to listed public places."}
+     ],
+     "offences": ["untouchability_offence"], "remedies": ["police_report_fir", "writ_high_court"],
+     "missing_facts": ["where it happened and who was involved"]},
+
+    {"id": "forced_labour", "name": "Forced or bonded labour", "category": "employment_forced_labour",
+     "ordinary_law_primary": false,
+     "triggers": ["\\b(forc\\w* (me )?to work|forced labou?r|bonded|begar|without (any )?(wages|pay|salary)|not (being )?paid|unpaid|won'?t let me leave|refus\\w* to let me leave|not allowed to leave|kept (me )?locked|confiscat\\w* (my )?(passport|documents))\\b"],
+     "engages": [
+       {"provision_id": "COI:art:23:cl:1", "role": "primary", "condition": null,
+        "rationale": "Prohibits begar and similar forms of forced labour; not limited to the State."},
+       {"provision_id": "COI:art:23:cl:2", "role": "exception", "condition": null, "rationale": "Compulsory service for public purposes."},
+       {"provision_id": "COI:art:21", "role": "conditional", "condition": "state_action", "rationale": "Personal liberty against State deprivation."},
+       {"provision_id": "COI:art:24", "role": "conditional", "condition": "child", "rationale": "Only if a child below fourteen is employed in hazardous work."}
+     ],
+     "offences": ["unlawful_compulsory_labour", "wrongful_confinement", "forced_labour_offence"],
+     "remedies": ["police_report_fir", "district_magistrate_bonded_labour", "writ_high_court", "free_legal_aid"],
+     "missing_facts": ["whether you are physically prevented from leaving or threatened", "whether a loan or advance is being used to make you work", "how long wages have been unpaid and the agreed wage", "your age, if under eighteen"]},
+
+    {"id": "expression_private_institution", "name": "Restriction of speech by a private institution", "category": "freedom_of_expression",
+     "ordinary_law_primary": true,
+     "triggers": ["\\b(private (college|university|school|company|employer|institut\\w*))\\b.*\\b(criticis\\w*|speech|express\\w*|post\\w*|opinion|protest\\w*|suspend\\w*|expel\\w*)\\b",
+                  "\\b(criticis\\w*|speech|express\\w*|opinion|post\\w*)\\b.*\\b(private (college|university|school|company|employer|institut\\w*))\\b"],
+     "engages": [
+       {"provision_id": "COI:art:19:cl:1:sub:a", "role": "user_premise", "condition": "state_action",
+        "rationale": "Freedom of speech and expression of citizens, generally enforced against the State."},
+       {"provision_id": "COI:art:19:cl:2", "role": "restriction", "condition": null, "rationale": "Reasonable restrictions on 19(1)(a)."},
+       {"provision_id": "COI:art:12", "role": "context", "condition": null, "rationale": "Whether the institution is 'the State'."},
+       {"provision_id": "COI:art:226:cl:1", "role": "remedy", "condition": "public_function",
+        "rationale": "Writs may issue to 'any person or authority'; whether a private institution is amenable depends on facts and case law."}
+     ],
+     "offences": [], "remedies": ["institutional_appeal", "writ_high_court", "free_legal_aid"],
+     "missing_facts": ["whether the college is government-run, government-aided or a statutory university", "the institution's code of conduct and the exact rule relied on", "whether a written notice was issued and a hearing offered"]},
+
+    {"id": "expression_state_restriction", "name": "Restriction of speech by the government or a public body", "category": "freedom_of_expression",
+     "ordinary_law_primary": false,
+     "triggers": ["\\b(government|police|state|public (university|college)|government (college|school)|ban\\w*|censor\\w*|sedition|blocked)\\b.*\\b(speech|express\\w*|post\\w*|book|film|criticis\\w*|protest\\w*|tweet\\w*|journalis\\w*)\\b",
+                  "\\bfreedom of (speech|expression)\\b"],
+     "engages": [
+       {"provision_id": "COI:art:19:cl:1:sub:a", "role": "primary", "condition": "state_action", "rationale": "Freedom of speech and expression."},
+       {"provision_id": "COI:art:19:cl:2", "role": "restriction", "condition": null, "rationale": "Reasonable restrictions."},
+       {"provision_id": "COI:art:358", "role": "exception", "condition": "emergency", "rationale": "Suspension of Article 19 during a war/external aggression Emergency."}
+     ],
+     "offences": [], "remedies": ["writ_high_court", "writ_supreme_court"],
+     "missing_facts": ["which authority acted, under which law or order", "what exactly was said or published"]},
+
+    {"id": "assembly_protest", "name": "Peaceful assembly and protest", "category": "freedom_of_expression",
+     "ordinary_law_primary": false,
+     "triggers": ["\\b(protest\\w*|rally|dharna|assembl\\w*|march|demonstration|gathering)\\b"],
+     "engages": [
+       {"provision_id": "COI:art:19:cl:1:sub:b", "role": "primary", "condition": "state_action", "rationale": "Right to assemble peaceably and without arms."},
+       {"provision_id": "COI:art:19:cl:3", "role": "restriction", "condition": null, "rationale": "Reasonable restrictions on assembly."}
+     ],
+     "offences": [], "remedies": ["writ_high_court"],
+     "missing_facts": ["whether the assembly was peaceful and unarmed", "any prohibitory order in force"]},
+
+    {"id": "religious_freedom", "name": "Freedom of religion", "category": "fundamental_rights",
+     "ordinary_law_primary": false,
+     "triggers": ["\\b(religio\\w*|worship|temple|mosque|church|gurdwara|conversion|convert\\w*|faith)\\b"],
+     "engages": [
+       {"provision_id": "COI:art:25:cl:1", "role": "primary", "condition": "state_action", "rationale": "Freedom of conscience and religion."},
+       {"provision_id": "COI:art:25:cl:2", "role": "restriction", "condition": null, "rationale": "State regulation of secular activities."},
+       {"provision_id": "COI:art:26", "role": "conditional", "condition": null, "rationale": "Religious denominations' affairs."}
+     ],
+     "offences": [], "remedies": ["writ_high_court"],
+     "missing_facts": ["who restricted the practice and on what basis"]},
+
+    {"id": "education_access", "name": "Access to education", "category": "education",
+     "ordinary_law_primary": false,
+     "triggers": ["\\b(school admission|admission|education|school|fees|child.*school)\\b"],
+     "engages": [
+       {"provision_id": "COI:art:21A", "role": "primary", "condition": "child_6_14", "rationale": "Free and compulsory education for ages 6 to 14."},
+       {"provision_id": "COI:art:29:cl:2", "role": "conditional", "condition": "state_funded_institution", "rationale": "Admission to State-maintained or aided institutions."},
+       {"provision_id": "COI:art:30:cl:1", "role": "conditional", "condition": "minority_institution", "rationale": "Minority educational institutions."}
+     ],
+     "offences": [], "remedies": ["writ_high_court"],
+     "missing_facts": ["the child's age", "whether the school is government, aided or private unaided"]},
+
+    {"id": "property_deprivation_state", "name": "Government taking or acquiring property", "category": "constitutional_interpretation",
+     "ordinary_law_primary": false,
+     "triggers": ["\\b(government|state|authority|municipal\\w*|acquir\\w*|demoli\\w*)\\b.*\\b(land|property|house|home)\\b",
+                  "\\bright to property\\b"],
+     "engages": [
+       {"provision_id": "COI:art:300A", "role": "primary", "condition": "state_action", "rationale": "Deprivation only by authority of law."}
+     ],
+     "offences": [], "remedies": ["writ_high_court"],
+     "missing_facts": ["which law or order the authority relied on", "whether notice and compensation were offered"]},
+
+    {"id": "public_employment_equality", "name": "Equality in public employment", "category": "employment_forced_labour",
+     "ordinary_law_primary": false,
+     "triggers": ["\\b(government job|public employment|recruitment|reservation|promotion|civil service)\\b"],
+     "engages": [
+       {"provision_id": "COI:art:16:cl:1", "role": "primary", "condition": "state_action", "rationale": "Equality of opportunity in public employment."},
+       {"provision_id": "COI:art:16:cl:2", "role": "primary", "condition": "state_action", "rationale": "Non-discrimination in public employment."},
+       {"provision_id": "COI:art:16:cl:4", "role": "exception", "condition": null, "rationale": "Reservation for backward classes."}
+     ],
+     "offences": [], "remedies": ["writ_high_court"],
+     "missing_facts": ["the employer and the recruitment rules"]},
+
+    {"id": "child_labour", "name": "Child labour", "category": "employment_forced_labour",
+     "ordinary_law_primary": false,
+     "triggers": ["\\b(child labou?r|child (is )?(working|employed)|minor (working|employed)|children (working|employed)|below (the age of )?14)\\b",
+                  "\\b([1-9]|1[0-3])[- ]?(year|yr)s?[- ]old\\b.*\\b(employ\\w*|work\\w*|factory|mine|labou?r|job)\\b",
+                  "\\b(employ\\w*|work\\w*|hire\\w*)\\b.*\\b([1-9]|1[0-3])[- ]?(year|yr)s?[- ]old\\b"],
+     "engages": [
+       {"provision_id": "COI:art:24", "role": "primary", "condition": null, "rationale": "Children below 14 in factories, mines, hazardous employment."},
+       {"provision_id": "COI:art:21A", "role": "context", "condition": "child_6_14", "rationale": "Education for 6 to 14."}
+     ],
+     "offences": [], "remedies": ["police_report_fir", "writ_high_court"],
+     "missing_facts": ["the child's age and the type of work"]},
+
+    {"id": "emergency_rights", "name": "Fundamental Rights during an Emergency", "category": "constitutional_interpretation",
+     "ordinary_law_primary": false,
+     "triggers": ["\\bemergenc\\w*\\b"],
+     "engages": [
+       {"provision_id": "COI:art:358", "role": "primary", "condition": null, "rationale": "Article 19 during Emergency."},
+       {"provision_id": "COI:art:359", "role": "primary", "condition": null, "rationale": "Suspension of enforcement except Articles 20 and 21."}
+     ],
+     "offences": [], "remedies": [], "missing_facts": []},
+
+    {"id": "constitutional_amendment", "name": "Amendment of the Constitution", "category": "constitutional_interpretation",
+     "ordinary_law_primary": false,
+     "triggers": ["\\b(amend\\w*|amendment act|repeal\\w*|omitted|inserted|substituted)\\b"],
+     "engages": [
+       {"provision_id": "COI:art:368", "role": "primary", "condition": null, "rationale": "Power and procedure to amend."}
+     ],
+     "offences": [], "remedies": [], "missing_facts": []},
+
+    {"id": "rights_vs_directives", "name": "Fundamental Rights and Directive Principles", "category": "fundamental_rights",
+     "ordinary_law_primary": false,
+     "triggers": ["\\bdirective principles?\\b", "\\bfundamental rights?\\b.*\\b(differ\\w*|vs\\.?|versus|compare|compar\\w*)\\b"],
+     "engages": [
+       {"provision_id": "COI:art:32:cl:1", "role": "primary", "condition": null, "rationale": "Fundamental Rights are enforceable in the Supreme Court."},
+       {"provision_id": "COI:art:37", "role": "primary", "condition": null, "rationale": "Directive Principles are not enforceable by any court."},
+       {"provision_id": "COI:art:12", "role": "context", "condition": null, "rationale": "Definition of the State."}
+     ],
+     "offences": [], "remedies": [], "missing_facts": []},
+
+    {"id": "fundamental_rights_overview", "name": "Overview of Fundamental Rights", "category": "fundamental_rights",
+     "ordinary_law_primary": false,
+     "triggers": ["\\b(my|what are|list( of)?|overview of)\\b.*\\bfundamental rights\\b"],
+     "engages": [
+       {"provision_id": "COI:art:12", "role": "context", "condition": null, "rationale": "Definition of the State."},
+       {"provision_id": "COI:art:14", "role": "primary", "condition": null, "rationale": "Right to Equality."},
+       {"provision_id": "COI:art:19:cl:1", "role": "primary", "condition": null, "rationale": "Right to Freedom."},
+       {"provision_id": "COI:art:21", "role": "primary", "condition": null, "rationale": "Life and personal liberty."},
+       {"provision_id": "COI:art:23:cl:1", "role": "primary", "condition": null, "rationale": "Right against Exploitation."},
+       {"provision_id": "COI:art:25:cl:1", "role": "primary", "condition": null, "rationale": "Freedom of Religion."},
+       {"provision_id": "COI:art:29:cl:1", "role": "primary", "condition": null, "rationale": "Cultural and Educational Rights."},
+       {"provision_id": "COI:art:32:cl:1", "role": "primary", "condition": null, "rationale": "Right to Constitutional Remedies."}
+     ],
+     "offences": [], "remedies": ["writ_supreme_court", "writ_high_court"], "missing_facts": []},
+
+    {"id": "voting_rights", "name": "Voting and elections", "category": "constitutional_interpretation",
+     "ordinary_law_primary": false,
+     "triggers": ["\\b(vote|votes|voting|voter|elections?|electoral roll|franchise|suffrage)\\b"],
+     "engages": [
+       {"provision_id": "COI:art:326", "role": "primary", "condition": null, "rationale": "Elections on the basis of adult suffrage."},
+       {"provision_id": "COI:art:325", "role": "primary", "condition": null, "rationale": "No exclusion from the electoral roll on grounds of religion, race, caste or sex."}
+     ],
+     "offences": [], "remedies": [],
+     "missing_facts": ["whether you are an Indian citizen aged 18 or over", "whether your name is on the electoral roll"]},
+
+    {"id": "fundamental_duties", "name": "Fundamental Duties", "category": "constitutional_interpretation",
+     "ordinary_law_primary": false,
+     "triggers": ["\\bfundamental dut(y|ies)\\b"],
+     "engages": [{"provision_id": "COI:art:51A", "role": "primary", "condition": null, "rationale": "Fundamental Duties."}],
+     "offences": [], "remedies": [], "missing_facts": []}
+  ],
+
+  "scenarios": [
+    {"id": "phone_theft_public_transport", "name": "Phone stolen on public transport", "issues": ["private_property_crime"],
+     "description": "A private person steals a mobile phone or wallet on a bus or train; the victim wants to know their rights and how to report it."},
+    {"id": "arrest_without_grounds", "name": "Arrested without being told the grounds or allowed a lawyer", "issues": ["arrest_safeguards"],
+     "description": "Police arrest or detain a person without explaining the grounds of arrest or allowing access to a lawyer."},
+    {"id": "landlord_religious_refusal", "name": "Private landlord refuses to rent because of religion", "issues": ["discrimination_private_actor"],
+     "description": "A private landlord or housing society refuses to rent a flat on grounds of religion or caste."},
+    {"id": "employer_forced_unpaid_labour", "name": "Employer forces unpaid work and prevents leaving", "issues": ["forced_labour"],
+     "description": "An employer makes a worker work without wages and does not allow them to leave."},
+    {"id": "private_college_speech", "name": "Private college disciplines a student for criticising the government", "issues": ["expression_private_institution"],
+     "description": "A private college threatens to suspend a student for criticising a government policy."},
+    {"id": "police_refuse_fir", "name": "Police refuse to register a complaint", "issues": ["police_refusal_complaint", "private_property_crime"],
+     "description": "The police station refuses to record a complaint about a theft or other offence."}
+  ],
+
+  "case_law": []
+}

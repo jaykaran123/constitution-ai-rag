@@ -1,0 +1,16 @@
+.graph{margin-top:10px;padding:12px 8px;background:#f2f3ec;border:1px solid #e2e5db;border-radius:10px;overflow-x:auto}
+.graph-visual{display:block;max-width:none;height:auto}
+.graph-edge path{fill:none;stroke:#829a83;stroke-width:2}
+.graph-edge marker path{fill:#829a83}
+.graph-edge text{fill:#5c6f5b;font:600 11px 'DM Sans',sans-serif;text-anchor:middle;paint-order:stroke;stroke:#f2f3ec;stroke-width:7px;stroke-linejoin:round}
+.graph-node rect{fill:#fffefa;stroke:#c8d1c5;stroke-width:1.5}
+.graph-node.part rect{fill:#e9f0e9;stroke:#7c9a80}
+.graph-node.article rect{fill:#fffefa;stroke:#bd9859}
+.graph-node text{fill:#25251f;font:500 12px 'DM Sans',sans-serif;text-anchor:middle;dominant-baseline:middle}
+.graph-empty{padding:8px;color:#77776e;font-size:11px}
+.graph-node.clause rect,.graph-node.subclause rect{fill:#fffefa;stroke:#d2b98a}
+.graph-node.fundamentalright rect,.graph-node.userright rect{fill:#eef3f7;stroke:#8aa3ba}
+.graph-node.legalrestriction rect,.graph-node.exception rect{fill:#f7efe6;stroke:#c99d6c}
+.graph-node.legalissue rect,.graph-node.legalconcept rect{fill:#f1eef7;stroke:#a596c2}
+.graph-node.amendment rect{fill:#f3f3ef;stroke:#b5b4aa}
+.graph-legend{font-size:10px;color:#77776e;margin-top:6px}

@@ -1,0 +1,17 @@
+**/.venv
+**/__pycache__
+**/.pytest_cache
+**/*.pyc
+**/.env
+**/.env.*
+!.env.example
+.git
+.vscode
+THE CONSTITUTION OF INDIA.pdf
+backend/data/app.db*
+backend/data/*.log
+backend/data/uploads
+backend/data/backups
+backend/data/statutes
+backend/tests
+docs
